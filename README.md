@@ -9,9 +9,12 @@ Resources
 * [The Nature of Code](http://natureofcode.com/)
 * [Games Fleadh](http://www.gamesfleadh.ie/)
 * Python
-* Py5
+* [Py5](https://py5coding.org/)
 * Processing
 * Java
+- https://github.com/maurymarkowitz/101-BASIC-Computer-Games
+- [MSX Online](https://webmsx.org/)
+- https://codingbat.com/python
 
 ## Contact me
 * Email: bryan.duggan@tudublin.ie
