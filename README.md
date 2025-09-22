@@ -121,4 +121,4 @@ There are few things you can try (but you will probably have to read ahead and f
 
 
 
-![Submit your git repos](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNURDRIQUxWUDNaQjJPNERRSUMzOTRBU0lTWS4u)
+[Submit your git repos](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNURDRIQUxWUDNaQjJPNERRSUMzOTRBU0lTWS4u)
