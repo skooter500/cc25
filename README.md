@@ -15,6 +15,7 @@ Resources
 - https://github.com/maurymarkowitz/101-BASIC-Computer-Games
 - [MSX Online](https://webmsx.org/)
 - https://codingbat.com/python
+- [Self enrole in this Brightspace](Creative Coding DMEDH1082: Sept-Dec Academic Term 2025/26)!
 
 ## Contact me
 * Email: bryan.duggan@tudublin.ie
