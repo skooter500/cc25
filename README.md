@@ -30,6 +30,21 @@ What you will need to install:
 - Git
 - py5
 
+## Week 4 - Trigonometry
+- [Slides](trigonometry.pdf)
+
+### Lab - Flower Jam
+
+Form a group. Go out into the campus and take pictures of patterns you find in nature and the environment around you
+
+Share on discord
+
+Use loops and Py5 to create artistic interpretations of things that you find
+
+Combine your sketches with those of your team mates and make a collage
+
+Share your creations on discord. Upload the code and some screenshots to brightspace to get your mark for this week 
+
 ## Week 3 - Loops
 
 ### Lab
