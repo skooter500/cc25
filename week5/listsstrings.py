@@ -1,4 +1,4 @@
-import py5
+import py5, random
 
 players = ["bryan", "mary", "peter", "mari", "michael"]
 health = [100, 250, 300, 500, 20]
@@ -67,6 +67,14 @@ for n in names:
     print(n)
 
 
+cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+suits = ["Clubs", "Spades", "Hearts", "Diamonds"]
+
+for i in range(100):
+    ca = random.randrange(0, len(cards))
+    su = random.randrange(0, len(suits))
+    print(f"The {cards[ca]} of {suits[su]}")
+
 if s.startswith("Grace"):
     print("I invented COBOL")
 
@@ -78,6 +86,18 @@ power_ups = [{"x": 100, "y": 200},
              {"x": 50, "y": 20},
              {"x": 150, "y": 90},
             ]
+
+chrs = ["Priest", "Soldier", "Nurse", "Fair Maid", "Dwarf", "Captain", "Cook", "Student", "Pilot", "Child"]
+verbs = ["jumped on", "flew off", "ran from", "boiled", "killed", "buried alive", "tickeled", "barked at", "grew a", "washed"]
+objects = ["child", "pot", "aeroplane", "car", "bicycle", "steam deck", "ufo", "tin whistle", "laptop", "joystick", "xbox"]
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+for i in range(7):
+    rand_chr = random.randrange(0, len(chrs))
+    rand_verbs = random.randrange(0, len(verbs))
+    rand_objs = random.randrange(0, len(objects))
+    print(f"The {chrs[rand_chr]} {verbs[rand_verbs]} the {objects[rand_objs]} on {days[i]}")
+
+
 
 def setup():
     py5.size(500, 500)
