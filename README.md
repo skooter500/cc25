@@ -32,6 +32,8 @@ What you will need to install:
 
 ## Week 5 - Lists, dictionaries, slicing
 
+- [Python Fundamentals](python_fundamentals.pdf)
+
 ### Lab 
 
 # Creative Coding Lab: Lists, Dictionaries, Strings & Slicing
