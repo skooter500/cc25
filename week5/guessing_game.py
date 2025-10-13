@@ -2,6 +2,8 @@ import random
 
 r = random.randrange(0, 10)
 val = -1
+
+
 while val != r:
     print(r)
     print("Guess the number I am thinking of:")
@@ -14,3 +16,8 @@ while val != r:
         print("Too high")
     else:
         print("Too low")
+
+
+
+
+
