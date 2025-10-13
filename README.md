@@ -5,6 +5,8 @@
 
 Resources
 ---------
+- [Self enrole in this Brightspace](https://brightspace.tudublin.ie/d2l/le/discovery/view/course/479580)!
+
 * [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)
 * [The Nature of Code](http://natureofcode.com/)
 * [Games Fleadh](http://www.gamesfleadh.ie/)
@@ -15,7 +17,6 @@ Resources
 - https://github.com/maurymarkowitz/101-BASIC-Computer-Games
 - [MSX Online](https://webmsx.org/)
 - https://codingbat.com/python
-- [Self enrole in this Brightspace](Creative Coding DMEDH1082: Sept-Dec Academic Term 2025/26)!
 
 ## Contact me
 * Email: bryan.duggan@tudublin.ie
@@ -24,11 +25,11 @@ Resources
 
 What you will need to install:
 
-- Python
-- Java
-- VSCode
-- Git
-- py5
+1. [Visual Studio Code](https://code.visualstudio.com/)
+2. [Python 3.13](https://www.python.org/downloads/release/python-3138/)
+3. [Java JDK](https://www.oracle.com/europe/java/technologies/downloads/)
+4. [Py5 Library](https://pypi.org/project/py5/)
+5. [Git](https://git-scm.com/downloads)
 
 ## Week 5 - Lists, dictionaries, slicing
 
@@ -42,55 +43,55 @@ What you will need to install:
 
 ### Task 1: Player Names and Welcome Messages
 Create a variable with a player name and practice string manipulation:
-- Store a player name like "SHADOWHUNTER_99"
-- Convert it to lowercase
-- Extract just the username part (before the underscore)
-- Create a welcome message using f-strings: "Welcome, {username}!"
+- Store a player name like `"SHADOWHUNTER_99"`
+- Convert it to lowercase.
+- Extract just the username part (before the underscore).
+- Create a welcome message using f-strings: `"Welcome, {username}!"`
 
 ### Task 2: Dialogue System
 Create a long dialogue string from a game NPC:
 ```python
 dialogue = "Greetings, traveler! I have a quest for you. Find the ancient sword in the dark forest."
 ```
-- Use slicing to extract just the first sentence
-- Get the last 20 characters
-- Extract every second character (step slicing)
-- Find the word "quest" using string methods
+- Use string slicing to extract just the first sentence.
+- Get the last 20 characters.
+- Extract every second character (step slicing).
+- Find the word "quest" using string methods.
 
 ### Task 3: Cheat Code Parser
 Game cheat codes often need to be processed:
-- Create a cheat code string: "POWERUP_HEALTH_MAX"
+- Create a cheat code string: `"POWERUP_HEALTH_MAX"`
 - Use `split()` to break it into parts
 - Use `replace()` to change underscores to spaces
-- Practice slicing to get the first word, last word, and middle word
+- Practice slicing to get the first word, last word, and middle word.
 
 ## Part 2: Lists for Game Elements
 
 ### Task 4: Inventory System
 Create a basic inventory using lists:
 - Make a list of 5 items: `["sword", "potion", "shield", "key", "map"]`
-- Add a new item to the inventory
-- Remove an item the player used
-- Check if a specific item is in the inventory
-- Print how many items the player has
+- Add a new item to the inventory.
+- Remove an item the player used, it can be any item of your choice.
+- Check if a specific item is in the inventory.
+- Print how many items the player has.
 
 ### Task 5: Enemy Spawn List
 Create a list of enemy types and manipulate it:
 - Start with: `enemies = ["goblin", "orc", "troll"]`
-- Add a boss enemy at the end
-- Insert a new enemy type at position 1
-- Create a slice of the first 2 enemies
-- Reverse the list to change spawn order
-- Make a copy of the list for a second level
+- Add a boss enemy at the end of the list.
+- Insert a new enemy type at index position 1.
+- Create a slice of the list containing the first 2 enemies.
+- Reverse the list to change spawn order.
+- Make a copy of the list for a second level.
 
 ### Task 6: High Scores
 Work with a list of numbers representing scores:
-- Create a list: `scores = [1500, 2300, 1800, 3200, 2100]`
-- Find the highest score using `max()`
-- Find the lowest score
-- Sort the scores in descending order
-- Get the top 3 scores using slicing
-- Calculate the average score
+- Create a list: `scores = [1500, 2300, 1800, 3200, 2100]`.
+- Find the highest score using `max()`.
+- Find the lowest score.
+- Sort the scores in descending order.
+- Get the top 3 scores using slicing.
+- Calculate the average score.
 
 ## Part 3: Dictionaries for Game Data
 
@@ -104,11 +105,11 @@ player = {
     "level": 1
 }
 ```
-- Access and print the player's health
-- Update the health after taking damage
-- Add a new stat like "experience"
-- Print all the stat names (keys)
-- Print all the values
+- Access and print the player's health.
+- Update the health after taking damage.
+- Add a new stat like "experience".
+- Print all the stat names (keys).
+- Print all the values.
 
 ### Task 8: Item Database
 Create a dictionary of game items with their properties:
@@ -119,11 +120,11 @@ items = {
     "shield": {"defense": 10, "type": "armor"}
 }
 ```
-- Access the damage value of the sword
-- Add a new item with its properties
-- Print all item names
-- Check if "potion" exists in the items
-- Update the shield's defense value
+- Access the damage value of the sword.
+- Add a new item with its properties.
+- Print all item names.
+- Check if "potion" exists in the items.
+- Update the shield's defense value to a number of your choice.
 
 ### Task 9: Game Settings
 Create a settings dictionary:
@@ -135,16 +136,18 @@ settings = {
     "controls": ["W", "A", "S", "D"]
 }
 ```
-- Change the difficulty to "hard"
-- Adjust the volume
-- Access the control keys and print just the first two
-- Add a new setting for screen resolution
+- Change the difficulty to "hard".
+- Adjust the volume to a value of your choice.
+- Access the control keys and print just the first two.
+- Add a new setting for screen resolution.
 
 ## Part 4: Combining Concepts with py5
 
 ### Task 10: Drawing Collectible Items
 Use a list to draw multiple coins on screen:
 ```python
+from py5 import *
+
 def setup():
     size(600, 400)
 
@@ -155,14 +158,18 @@ def draw():
     for x in coin_positions:
         fill(255, 215, 0)
         circle(x, 200, 30)
+
+run_sketch()
 ```
-- Run this code
-- Add y-coordinates by making it a list of lists: `[[100, 200], [200, 150], ...]`
-- Modify to draw coins at different positions
+- Run this code.
+- Add y-coordinates by making it a list of lists: `[[100, 200], [200, 150], ...]`.
+- Modify to draw coins at different positions.
 
 ### Task 11: Color-Coded Health Bar
 Use slicing and dictionaries to create a health bar:
 ```python
+from py5 import *
+
 player_stats = {
     "health": 75,
     "max_health": 100
@@ -191,13 +198,17 @@ def draw():
         fill(255, 0, 0)  # Red
     
     rect(50, 50, current_width, 30)
+
+run_sketch()
 ```
-- Experiment with different health values
-- Add a text label showing the health numbers
+- Experiment with different health values.
+- Add a text label showing the health numbers.
 
 ### Task 12: Enemy Wave System
 Create a system that spawns enemies in waves using lists and dictionaries:
 ```python
+from py5 import *
+
 current_wave = 0
 waves = [
     {"enemies": ["goblin", "goblin"], "count": 2},
@@ -225,16 +236,18 @@ def draw():
         text(f"{i+1}. {enemy}", 20, y_pos)
         y_pos += 25
 
-run()
+run_sketch()
 ```
-- Modify the code to add a 4th wave
-- Add a "boss" property to wave dictionaries (True/False)
-- Display boss waves differently
+- Modify the code to add a 4th wave.
+- Add a "boss" property to wave dictionaries (`True`/`False`)
+- Display boss waves differently.
 
 
-### Task 14: Inventory Grid Visualization
+### Task 13: Inventory Grid Visualization
 Create a visual inventory grid using nested lists:
 ```python
+from py5 import *
+
 inventory_grid = [
     ["sword", "potion", None],
     ["shield", None, "key"],
@@ -265,13 +278,12 @@ def draw():
                 text_align(CENTER, CENTER)
                 text(item, x + 40, y + 40)
 
-run()
+run_sketch()
 ```
-- Add more items to the grid
-- Change the grid to 4x4
-- Add color coding for different item types
+- Add more items to the grid so that it displays a 4x4 grid structure.
+- Add color coding for different item types.
 
-### Task 15: Player Profile System
+### Task 14: Player Profile System
 Combine everything into a complete player profile:
 ```python
 player_profile = {
@@ -282,17 +294,17 @@ player_profile = {
     "achievements": ["First Blood", "Survivor"]
 }
 ```
-- Access and print just the username (without the number)
-- Add a new item to inventory
-- Mark a quest as complete by removing it
-- Add a new achievement
-- Calculate total stat points
-- Create a formatted status report that prints all information nicely
+- Access and print just the username (without the number).
+- Add a new item to inventory.
+- Mark a quest as complete by removing it.
+- Add a new achievement.
+- Calculate total stat points.
+- Create a formatted status report that prints all information nicely.
 
 ## Bonus Challenges
 
 ### Bonus 1: Loot Drop System
-Create a random loot system using lists and dictionaries. Items should have rarity levels.
+Create a random loot system using lists and dictionaries. Items should have rarity levels. Tip: Use the [random](https://www.w3schools.com/python/ref_random_choices.asp) library to achieve this.
 
 ### Bonus 2: Dialogue Tree
 Build a branching dialogue system using nested dictionaries where each choice leads to different responses.

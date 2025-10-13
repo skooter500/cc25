@@ -51,12 +51,10 @@ print(bryan["armor"])
 all_players = [{"name": "Pat", "health": 60, "armor": 80}]
 all_players.append(bryan)
 
-for i in range(len(all_players)):
-    print(f"{all_players[i]["name"]}")
-    print(f"{all_players[i]["health"]}")
-    print(f"{all_players[i]["armor"]}")
-
-s = "Grace Murry Hopper"
+for player in all_players:
+    print(f"{player['name']}")
+    print(f"{player['health']}")
+    print(f"{player['armor']}")
 
 names = s.split(" ")
 
@@ -66,20 +64,22 @@ for i in range(len(names)):
 for n in names:
     print(n)
 
+s = "Grace Murry Hopper"
+s_lower = s.lower()
+print(s_lower)
+
+if s.startswith("Grace"):
+    print("I invented COBOL")
 
 cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 suits = ["Clubs", "Spades", "Hearts", "Diamonds"]
 
 for i in range(100):
-    ca = random.randrange(0, len(cards))
-    su = random.randrange(0, len(suits))
-    print(f"The {cards[ca]} of {suits[su]}")
+    selected_card = random.choice(cards)
+    selected_suit = random.choice(suits)
+    print(f"The {selected_card} of {selected_suit}")
 
-if s.startswith("Grace"):
-    print("I invented COBOL")
 
-s_lower = s.lower()
-print(s_lower)
 
 power_ups = [{"x": 100, "y": 200}, 
              {"x": 200, "y": 150},
@@ -92,10 +92,10 @@ verbs = ["jumped on", "flew off", "ran from", "boiled", "killed", "buried alive"
 objects = ["child", "pot", "aeroplane", "car", "bicycle", "steam deck", "ufo", "tin whistle", "laptop", "joystick", "xbox"]
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 for i in range(7):
-    rand_chr = random.randrange(0, len(chrs))
-    rand_verbs = random.randrange(0, len(verbs))
-    rand_objs = random.randrange(0, len(objects))
-    print(f"The {chrs[rand_chr]} {verbs[rand_verbs]} the {objects[rand_objs]} on {days[i]}")
+    rand_chr = random.choice(chrs)
+    rand_verbs = random.choice(verbs)
+    rand_objs = random.choice(objects)
+    print(f"The {rand_chr} {rand_verbs} the {rand_objs} on {days[i]}")
 
 
 
@@ -104,8 +104,7 @@ def setup():
 
 def draw():
     global power_ups
-    for i in range(len(power_ups)):
-        power = power_ups[i]
+    for power in power_ups:
         py5.circle(power["x"], power["y"], 50)
     
 py5.run_sketch()
