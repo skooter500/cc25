@@ -30,6 +30,471 @@ What you will need to install:
 - Git
 - py5
 
+## Week 6 - Sound
+- [Notes on Processing sound](week6/processing_sound_notes.pdf)
+
+## Lab
+
+Playing and analysing sounddddddsss
+
+# Py5 Sound Processing Lab
+
+## Setup
+
+Before you start, make sure you have:
+
+1. **Installed Py5:**
+   ```bash
+   pip install py5
+   ```
+
+2. **Downloaded the Sound library:**
+   ```python
+   import py5_tools
+   py5_tools.processing.download_library("Sound")
+   ```
+
+3. **Created your project folder:**
+   ```
+   my_lab/
+   ├── lab.py
+   └── data/
+       └── (put your sound files here)
+   ```
+
+4. **Got some sound files** (WAV or MP3 format) and placed them in the `data` folder
+
+---
+
+## Exercise 1: Your First Sound Player
+
+**Objective:** Load and play a sound file when you click the mouse.
+
+**What to do:**
+- Create a sketch that displays a message
+- Load a sound file in `setup()`
+- Play the sound when the user clicks the mouse
+
+**Hints:**
+- Import: `from processing.sound import SoundFile`
+- Load with: `SoundFile(py5.get_current_sketch(), "filename.wav")`
+- Use `mouse_pressed()` function
+- Remember to use `global` for your sound variable
+
+**Expected behavior:** Click anywhere → sound plays!
+
+---
+
+## Exercise 2: Volume Controller
+
+**Objective:** Control the volume of a looping sound with mouse position.
+
+**What to do:**
+- Load a sound and make it loop continuously
+- Use the mouse X position to control volume (left = quiet, right = loud)
+- Display the current volume on screen
+
+**Hints:**
+- Use `soundfile.loop()` to keep playing
+- Use `py5.remap()` to convert mouse X to volume (0.0 to 1.0)
+- Update volume in `draw()` with `.amp(volume)`
+- Show a visual bar to represent volume
+
+**Expected behavior:** Moving mouse left/right changes volume smoothly!
+
+---
+
+## Exercise 3: Playback Speed Control
+
+**Objective:** Create a DJ speed controller using the mouse.
+
+**What to do:**
+- Load and loop a sound
+- Use mouse Y position to control playback rate
+- Top of screen = slow (0.5x), bottom = fast (2.0x)
+- Display the current speed
+
+**Hints:**
+- Use `.rate()` to change playback speed
+- Map mouse Y to rate range (0.5 to 2.0)
+- Lower rates = deeper pitch, higher rates = higher pitch
+- Show speed as text: `f"Speed: {rate:.2f}x"`
+
+**Expected behavior:** Moving mouse up/down changes pitch and speed!
+
+---
+
+## Exercise 4: Stereo Panning
+
+**Objective:** Make sound move between left and right speakers.
+
+**What to do:**
+- Load and loop a sound
+- Use mouse X to pan the sound from left speaker to right speaker
+- Draw a circle that moves with the mouse to show panning position
+
+**Hints:**
+- Use `.pan()` with values from -1.0 (left) to 1.0 (right)
+- Map mouse X to pan range
+- Draw a circle at mouse X position
+- Label left and right sides of screen
+
+**Expected behavior:** Sound follows your mouse from speaker to speaker!
+
+---
+
+## Exercise 5: Amplitude Visualizer
+
+**Objective:** Create a circle that grows and shrinks with the music's volume.
+
+**What to do:**
+- Load and loop a sound
+- Create an Amplitude analyzer
+- Draw a circle that gets bigger when the music is loud
+- Change the circle's color based on volume
+
+**Hints:**
+- Import and use `Amplitude` class
+- Create analyzer: `amplitude = Amplitude(py5.get_current_sketch())`
+- Connect to sound: `amplitude.input(soundfile)`
+- Get value: `amp = amplitude.analyze()`
+- Map amp (0.0-0.5 range) to circle size
+
+**Expected behavior:** Circle pulses with the beat!
+
+---
+
+## Exercise 6: Simple Frequency Bars
+
+**Objective:** Create a basic spectrum analyzer with colored bars.
+
+**What to do:**
+- Load and loop a sound
+- Create an FFT analyzer with 64 bands
+- Draw 64 rectangles across the screen
+- Each bar's height represents that frequency's amplitude
+- Color the bars from red (low) to blue (high)
+
+**Hints:**
+- Import and use `FFT` class
+- Create: `fft = FFT(py5.get_current_sketch(), 64)`
+- Analyze each frame: `fft.analyze()`
+- Loop through bands: `for i in range(64)`
+- Get amplitude: `fft.spectrum[i]`
+- Bar width = screen width / number of bands
+
+**Expected behavior:** Colorful bars dance to the music!
+
+---
+
+## Exercise 7: Smooth Spectrum Analyzer
+
+**Objective:** Improve your spectrum analyzer with smooth animation.
+
+**What to do:**
+- Take your Exercise 6 code
+- Add smoothing so bars don't jump around
+- Make bars fade down slowly instead of instantly
+
+**Hints:**
+- Create a list to store smoothed values: `sum_values = [0.0] * bands`
+- Use smoothing formula: `sum_values[i] += (fft.spectrum[i] - sum_values[i]) * 0.2`
+- The 0.2 is the smoothing factor (smaller = smoother)
+- Draw using `sum_values[i]` instead of raw `fft.spectrum[i]`
+
+**Expected behavior:** Bars move smoothly and look professional!
+
+---
+
+## Exercise 8: Play a Musical Note
+
+**Objective:** Generate a pure tone using a sine wave oscillator.
+
+**What to do:**
+- Create a sine wave oscillator
+- Set it to play the note A (440 Hz)
+- Press SPACE to start/stop the tone
+- Display "Playing" or "Stopped" status
+
+**Hints:**
+- Import and use `SinOsc` class
+- Set frequency: `.freq(440)`
+- Set volume: `.amp(0.5)`
+- Toggle with `.play()` and `.stop()`
+- Track state with a boolean variable
+
+**Expected behavior:** Press SPACE → hear a pure tone!
+
+---
+
+## Exercise 9: Simple Piano
+
+**Objective:** Create a playable piano with 8 notes.
+
+**What to do:**
+- Create 8 sine wave oscillators
+- Map keys A, S, D, F, G, H, J, K to musical notes
+- Play note when key pressed, stop when released
+- Draw 8 rectangles as piano keys
+- Highlight key when pressed
+
+**Hints:**
+- Note frequencies: C=261.63, D=293.66, E=329.63, F=349.23, G=392.00, A=440.00, B=493.88, C=523.25
+- Use `key_pressed()` and `key_released()`
+- Use a dictionary or list to store oscillators
+- Draw keys in different colors when active
+
+**Expected behavior:** Play music with your keyboard!
+
+---
+
+## Exercise 10: Chord Maker
+
+**Objective:** Play musical chords with three oscillators.
+
+**What to do:**
+- Create 3 sine wave oscillators
+- Press '1' for C Major chord (C, E, G)
+- Press '2' for D Minor chord (D, F, A)
+- Press '3' for G Major chord (G, B, D)
+- All three notes play together
+
+**Hints:**
+- C Major: 261.63 Hz, 329.63 Hz, 392.00 Hz
+- D Minor: 293.66 Hz, 349.23 Hz, 440.00 Hz
+- G Major: 392.00 Hz, 493.88 Hz, 587.33 Hz
+- Start all 3 oscillators in `key_pressed()`
+- Stop all 3 in `key_released()`
+
+**Expected behavior:** Press keys to play harmonious chords!
+
+---
+
+## Exercise 11: Interactive Filter
+
+**Objective:** Apply a low-pass filter that you can control in real-time.
+
+**What to do:**
+- Load and loop a sound
+- Add a low-pass filter
+- Control filter frequency with mouse X
+- Show the cutoff frequency on screen
+- Low frequencies = left, high frequencies = right
+
+**Hints:**
+- Import and use `LowPass` class
+- Create: `lowpass = LowPass(py5.get_current_sketch())`
+- Connect: `lowpass.process(soundfile)`
+- Control: `lowpass.freq(cutoff)`
+- Map mouse X to range 100-10000 Hz
+
+**Expected behavior:** Left = muffled, right = clear!
+
+---
+
+## Exercise 12: Delay Effect Pedal
+
+**Objective:** Create an echo/delay effect controller.
+
+**What to do:**
+- Load and loop a sound
+- Add a delay effect
+- Use mouse X to control delay time (0 to 2 seconds)
+- Use mouse Y to control feedback amount (0.0 to 0.9)
+- Display both values
+
+**Hints:**
+- Import and use `Delay` class
+- Set time: `.time(seconds)`
+- Set feedback: `.feedback(amount)`
+- Don't go above 0.9 feedback or it gets crazy!
+- Show visual feedback bars
+
+**Expected behavior:** Create echo effects by moving the mouse!
+
+---
+
+## Exercise 13: Microphone Visualizer
+
+**Objective:** Visualize sound from your microphone in real-time.
+
+**What to do:**
+- Capture audio from the microphone
+- Use amplitude analyzer to get volume level
+- Draw a meter that shows how loud you are
+- Change color based on volume (green = quiet, red = loud)
+
+**Hints:**
+- Import and use `AudioIn` and `Amplitude`
+- Create: `mic = AudioIn(py5.get_current_sketch(), 0)`
+- Start: `mic.start()`
+- Connect amplitude analyzer to mic input
+- Map amplitude to bar height and color
+
+**Expected behavior:** Talk/sing into mic → see visual feedback!
+
+---
+
+## Exercise 14: Microphone Frequency Analyzer
+
+**Objective:** Create a live spectrum analyzer for microphone input.
+
+**What to do:**
+- Capture microphone audio
+- Use FFT to analyze frequencies
+- Draw spectrum bars showing what frequencies you're making
+- Try singing different notes and see them light up!
+
+**Hints:**
+- Combine microphone input with FFT analyzer
+- Use fewer bands (64 or 128) for better performance
+- Map frequency bands to bar positions
+- Low frequencies on left, high on right
+
+**Expected behavior:** Whistle high notes → right side lights up!
+
+---
+
+## Challenge 1: Music Visualizer 🌟
+
+**Objective:** Combine everything you've learned into one awesome visualizer!
+
+**What to do:**
+- Load and loop a music file
+- Create FFT spectrum bars (colorful!)
+- Add a pulsing center circle (amplitude)
+- Make the background brightness pulse with the music
+- Add smooth animations
+
+**Hints:**
+- Use both FFT and Amplitude analyzers
+- Use smoothing on spectrum values
+- Map amplitude to background color
+- Use `py5.color_mode(py5.HSB)` for rainbow colors
+- Add your own creative touches!
+
+**Expected behavior:** A professional-looking music visualizer!
+
+---
+
+## Challenge 2: Sound Effects Board 🌟
+
+**Objective:** Create a board with multiple sound effects you can trigger.
+
+**What to do:**
+- Load 6-9 different short sound files
+- Draw a grid of buttons on screen
+- Click a button to play that sound
+- Show visual feedback when playing
+
+**Hints:**
+- Use multiple SoundFile objects
+- Store them in a list
+- Use mouse position to detect which button clicked
+- Check if mouse is inside button rectangle
+- Change button color when sound is playing
+
+**Expected behavior:** A fun soundboard you can play with!
+
+---
+
+## Challenge 3: Theremin Instrument 🌟
+
+**Objective:** Create a theremin-like instrument controlled by mouse position.
+
+**What to do:**
+- Use mouse X for pitch (frequency)
+- Use mouse Y for volume
+- Only play when mouse is pressed
+- Show frequency and volume values
+- Add visual elements (waveform display?)
+
+**Hints:**
+- Use a sine or triangle oscillator
+- Map X to wide frequency range (100-2000 Hz)
+- Map Y to volume (0.0-0.8)
+- Start oscillator on mouse press
+- Stop on mouse release
+
+**Expected behavior:** Wave your mouse around to make music!
+
+---
+
+## Debugging Tips
+
+**If no sound plays:**
+- Check your sound file is in the `data` folder
+- Check the filename spelling is exactly right
+- Make sure you called `.play()` or `.loop()`
+- Check your computer's volume is up
+
+**If sound is distorted:**
+- Lower the amplitude (try 0.3 instead of 0.5)
+- Check you're not playing too many sounds at once
+- Make sure volume/rate values are in valid ranges
+
+**If FFT looks weird:**
+- Map spectrum values to a smaller range (0 to 0.3)
+- Use smoothing to reduce jumpiness
+- Try different numbers of bands (64, 128, 256)
+
+**If sketch is slow:**
+- Reduce number of FFT bands
+- Lower frame rate: `py5.frame_rate(30)`
+- Simplify your drawing code
+
+---
+
+## Tips for Success
+
+1. **Start simple** - Get each exercise working before moving on
+2. **Save often** - Use `Ctrl+S` frequently
+3. **Test as you go** - Run your code after each small change
+4. **Experiment** - Try different values and see what happens
+5. **Ask for help** - If stuck, ask your instructor or classmates
+6. **Be creative** - Add your own ideas to make projects unique!
+
+---
+
+## Bonus Ideas
+
+Once you've completed the exercises, try these:
+
+- **Visualize different songs** - See how different genres look
+- **Add mouse click effects** - Trigger sounds with clicks
+- **Create transitions** - Fade between different effects
+- **Make it full screen** - Use `py5.full_screen()`
+- **Add recording** - Save your visualizations as videos
+- **Combine exercises** - Mix multiple concepts together
+- **Create a game** - Add sound to a simple game
+- **Build a DJ controller** - Multiple sounds + effects
+
+---
+
+## Resources
+
+- **Py5 Documentation:** https://py5coding.org
+- **Processing Sound Reference:** https://processing.org/reference/libraries/sound/
+- **Free Sound Files:** freesound.org, zapsplat.com
+- **Audio Conversion:** Use Audacity (free) to convert sound formats
+
+---
+
+## Show Your Work!
+
+When you complete exercises:
+- Take screenshots of your visualizers
+- Record short videos of your instruments
+- Share your code with the class
+- Demo your coolest creations!
+
+**Most importantly: Have fun and experiment!** 🎵🎨
+
+---
+
+Good luck and happy coding!
+
+
 ## Week 5 - Lists, dictionaries, slicing
 
 - [Python Fundamentals](python_fundamentals.pdf)

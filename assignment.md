@@ -4,6 +4,9 @@
 
 Create an interactive music-themed application using Python and py5. Your project should respond to user input and create a visual experience connected to music, sound, or rhythm.
 
+- [Previous Student Work for Inspiration!](https://www.youtube.com/@skooter500/playlists)
+- []
+
 ## Theme: Music Experience
 
 Your application should explore music in a visual and interactive way. This could be:
