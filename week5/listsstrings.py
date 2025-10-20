@@ -1,4 +1,7 @@
 import py5, random
+import pyttsx3, time
+
+engine = pyttsx3.init()
 
 players = ["bryan", "mary", "peter", "mari", "michael"]
 health = [100, 250, 300, 500, 20]
@@ -88,16 +91,32 @@ power_ups = [{"x": 100, "y": 200},
             ]
 
 chrs = ["Priest", "Soldier", "Nurse", "Fair Maid", "Dwarf", "Captain", "Cook", "Student", "Pilot", "Child"]
-verbs = ["jumped on", "flew off", "ran from", "boiled", "killed", "buried alive", "tickeled", "barked at", "grew a", "washed"]
-objects = ["child", "pot", "aeroplane", "car", "bicycle", "steam deck", "ufo", "tin whistle", "laptop", "joystick", "xbox"]
+verbs = ["jumped on", "flew off", "ran from", "boiled", "killed", "buried alive", "tickeled", "barked at", "grew", "washed", "danced with", "shouted at", "rewarded"]
+objects = ["knife", "pot", "aeroplane", "car", "bicycle", "steam deck", "ufo", "tin whistle", "laptop", "joystick", "xbox"]
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+message = ""
+
+voices = engine.getProperty('voices')
+
 for i in range(7):
     rand_chr = random.randrange(0, len(chrs))
+    rand_chr1 = random.randrange(0, len(chrs))
     rand_verbs = random.randrange(0, len(verbs))
     rand_objs = random.randrange(0, len(objects))
-    print(f"The {chrs[rand_chr]} {verbs[rand_verbs]} the {objects[rand_objs]} on {days[i]}")
+    voice = random.randrange(0, len(voices))
+    print(voices[voice].id)
+    engine.setProperty('voice', voices[voice].id)
+    message = f"the {chrs[rand_chr]} {verbs[rand_verbs]} the {chrs[rand_chr1]} with the {objects[rand_objs]} on {days[i % 8]}"
+    print(message)
+    engine.say(message)
+    engine.runAndWait()
+    # time.sleep(5)
 
+# 
+    
 
+# engine.say("I will speak this text")
+# engine.runAndWait()
 
 def setup():
     py5.size(500, 500)
@@ -108,4 +127,4 @@ def draw():
         power = power_ups[i]
         py5.circle(power["x"], power["y"], 50)
     
-py5.run_sketch()
+# py5.run_sketch()

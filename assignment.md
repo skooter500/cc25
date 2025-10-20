@@ -1,4 +1,4 @@
-# Take-Home Assignment: Music Experience
+# Take-Home Assignment: Playful Music Experience
 
 ## Project Brief
 
@@ -10,7 +10,6 @@ Your application should explore music in a visual and interactive way. This coul
 - A visual music player interface
 - A musical instrument simulator
 - A music visualizer that responds to user input
-- An album cover generator
 - A visual story inspired by a song
 - A beat maker or rhythm game
 - A soundboard with visual feedback
@@ -71,8 +70,6 @@ Create an interactive visualizer where clicking different areas or pressing keys
 - Animated shapes that respond to mouse position
 - Particles or shapes that multiply and move based on selected mood
 
-### Idea 3: Album Collection Browser
-Create a visual library of your favorite albums that you can browse through.
 
 **Example features:**
 - List of album dictionaries (title, artist, year, color theme)
@@ -107,6 +104,11 @@ Design a fictional music player with visual controls and displays.
 - "Now playing" display with song info from dictionary
 - Progress bar (simulated)
 - Volume control that changes visual size/intensity
+
+### Idea 6: Music Player Interface
+- Design an instrument that responds to input from a midi controller or instrument
+- Use Open CV to create a hand tracking interface for creating music
+
 
 ## Submission Requirements
 
