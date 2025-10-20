@@ -19,7 +19,7 @@ def setup():
     
     # Load a sound file - put your .wav or .mp3 file in a 'data' folder
     soundfile = SoundFile(py5.get_current_sketch(), "Electric Traditions.mp3")
-    soundfile.loop()
+    # soundfile.loop()
 
     waveform = Waveform(py5.get_current_sketch(), 512)
     waveform.input(soundfile)
