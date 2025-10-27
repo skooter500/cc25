@@ -14,6 +14,7 @@ def setup():
     sine = SinOsc(py5.get_current_sketch())
     sine.freq(440) # A4 note (440 Hz)
     sine.amp(0.5)
+
     # 50% volume
 def mouse_pressed():
     sine.play() # Start oscillator

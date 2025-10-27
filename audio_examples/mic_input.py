@@ -56,29 +56,7 @@ def draw():
 
 
     py5.circle(250, 250, amp * 200)
-
-    
     
 py5.run_sketch()
-
-
-
-sample_rate = 44100
-channels = 2
-resolution = 2 
-time_in_hours = 1
-
-time_in_seconds = time_in_hours * 60 * 60
-size_in_bytes = time_in_seconds * sample_rate * resolution * channels
-size_in_kb = size_in_bytes / 1000
-size_in_mb = size_in_kb / 1000
-size_in_gb = size_in_mb / 1000
-
-print(f"Size in bytes: {size_in_bytes}")
-print(f"size_in_kb: {size_in_kb}")
-
-print(f"size_in_gb: {size_in_gb}")
-
-print(f"size_in_mb: {size_in_mb}")
 
 

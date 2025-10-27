@@ -18,7 +18,7 @@ def generate_response(sentence):
     words = sentence.split(" ")
     r = random.randrange(0, len(words))
     word = words[r]
-    if word 
+    
 
 def print_brain():
     global brain
