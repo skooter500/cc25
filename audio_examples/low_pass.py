@@ -18,6 +18,7 @@ def setup():
     
     white_noise = WhiteNoise(py5.get_current_sketch())
     white_noise.play()
+    
     waveform = Waveform(py5.get_current_sketch(), 512)
     waveform.input(white_noise)
 
