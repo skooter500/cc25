@@ -44,8 +44,14 @@ Course Notes:
 
 ## Lab
 
+Create these Audio Visualisers:
+
+[![YouTube](http://img.youtube.com/vi/xF7VrXZqLko/0.jpg)](https://www.youtube.com/watch?v=xF7VrXZqLko)
+
+
 - Create a drum box, with square buttons. If you press inside thesquare, it plays a drum sound from the drums folder. Try to use a list in your solution
-- Create a sequencer that plays back a dum pattern
+
+
 
 
 
