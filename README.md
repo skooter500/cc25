@@ -30,6 +30,27 @@ What you will need to install:
 - Git
 - py5
 
+Course Notes:
+- [Python Introduction](python_complete_presentation.pdf)
+- [Py5](py5.pdf)
+- [Python Fundamentals](python_fundamentals.pdf)
+- [Python OOP](python_oop.pdf)
+- [Notes on Processing sound](week6/processing_sound_notes.pdf)
+- [Audio Examples](audio_examples/)
+
+## Week 8 - Sound and maybe classes?
+- [Python OOP](python_oop.pdf)
+- [Audio Examples](audio_examples/)
+
+## Lab
+
+- Create a drum box, with square buttons. If you press inside thesquare, it plays a drum sound from the drums folder. Try to use a list in your solution
+- Create a sequencer that plays back a dum pattern
+
+
+
+## Week 7 - Review Week
+
 ## Week 6 - Sound
 - [Notes on Processing sound](week6/processing_sound_notes.pdf)
 
@@ -373,31 +394,6 @@ Before you start, make sure you have:
 - Use `py5.color_mode(py5.HSB)` for rainbow colors
 - Add your own creative touches!
 
-**Expected behavior:** A professional-looking music visualizer!
-
----
-
-## Challenge 2: Sound Effects Board 🌟
-
-**Objective:** Create a board with multiple sound effects you can trigger.
-
-**What to do:**
-- Load 6-9 different short sound files
-- Draw a grid of buttons on screen
-- Click a button to play that sound
-- Show visual feedback when playing
-
-**Hints:**
-- Use multiple SoundFile objects
-- Store them in a list
-- Use mouse position to detect which button clicked
-- Check if mouse is inside button rectangle
-- Change button color when sound is playing
-
-**Expected behavior:** A fun soundboard you can play with!
-
----
-
 ## Challenge 3: Theremin Instrument 🌟
 
 **Objective:** Create a theremin-like instrument controlled by mouse position.
@@ -418,7 +414,6 @@ Before you start, make sure you have:
 
 **Expected behavior:** Wave your mouse around to make music!
 
----
 
 ## Debugging Tips
 
@@ -428,35 +423,8 @@ Before you start, make sure you have:
 - Make sure you called `.play()` or `.loop()`
 - Check your computer's volume is up
 
-**If sound is distorted:**
-- Lower the amplitude (try 0.3 instead of 0.5)
-- Check you're not playing too many sounds at once
-- Make sure volume/rate values are in valid ranges
-
-**If FFT looks weird:**
-- Map spectrum values to a smaller range (0 to 0.3)
-- Use smoothing to reduce jumpiness
-- Try different numbers of bands (64, 128, 256)
-
-**If sketch is slow:**
-- Reduce number of FFT bands
-- Lower frame rate: `py5.frame_rate(30)`
-- Simplify your drawing code
 
 ---
-
-## Tips for Success
-
-1. **Start simple** - Get each exercise working before moving on
-2. **Save often** - Use `Ctrl+S` frequently
-3. **Test as you go** - Run your code after each small change
-4. **Experiment** - Try different values and see what happens
-5. **Ask for help** - If stuck, ask your instructor or classmates
-6. **Be creative** - Add your own ideas to make projects unique!
-
----
-
-## Bonus Ideas
 
 Once you've completed the exercises, try these:
 
@@ -469,7 +437,6 @@ Once you've completed the exercises, try these:
 - **Create a game** - Add sound to a simple game
 - **Build a DJ controller** - Multiple sounds + effects
 
----
 
 ## Resources
 
@@ -485,15 +452,7 @@ Once you've completed the exercises, try these:
 When you complete exercises:
 - Take screenshots of your visualizers
 - Record short videos of your instruments
-- Share your code with the class
-- Demo your coolest creations!
-
-**Most importantly: Have fun and experiment!** 🎵🎨
-
----
-
-Good luck and happy coding!
-
+- Share your code with the class on discord
 
 ## Week 5 - Lists, dictionaries, slicing
 
