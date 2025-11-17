@@ -36,7 +36,20 @@ Course Notes:
 - [Python Fundamentals](python_fundamentals.pdf)
 - [Python OOP](python_oop.pdf)
 - [Notes on Processing sound](week6/processing_sound_notes.pdf)
+- [OOP in Python 1](oop-python-1.pdf)
+- [OOP in Python 2](python_oop.pdf.pdf)
+- [OOP with Python & Py5](python_oop.pdf)
 - [Audio Examples](audio_examples/)
+
+## Week 9 - OOP, Spaceships & Music
+- [OOP with Python & Py5](python_oop.pdf)
+
+## Lab
+
+- Get the spaceship to shoot bullets. The bullets should have a lifetime of 10 5 seconds and should fade out. You can use a list to keep track of the bullets
+- Create an asteroid class that floats around and wraps off the screen
+- Have the asteroid disappear when hit by a bullet
+- Submit your work on Brightspace!
 
 ## Week 8 - Sound and maybe classes?
 - [Python OOP](python_oop.pdf)
