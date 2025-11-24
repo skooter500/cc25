@@ -16,6 +16,7 @@ osc3.freq(392.00)
 # G
 
 n = 0
+t = 0
 
 def key_pressed():
     global osc1, osc2, osc3
