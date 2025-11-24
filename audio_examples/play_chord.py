@@ -14,9 +14,16 @@ osc3.freq(392.00)
 # C
 # E
 # G
+
+n = 0
+
 def key_pressed():
     global osc1, osc2, osc3
     if py5.key == ' ':
+        t = py5.noise(n)
+        osc1.freq(py5.remap(t, 0, 1, 20, 200))
+        osc2.freq(py5.remap(t, 0, 1, 10000, 200))
+        osc3.freq(py5.remap(t, 0, 1, 10000, 15000))
         osc1.play()
         osc2.play()
         osc3.play()
@@ -34,8 +41,10 @@ def setup():
     py5.size(512, 512)
 
 def draw():
+    global n
     py5.background(255)
     py5.fill(0)
     py5.text("Press SPACE to play a chord", 20, py5.height/2)
+    n += 0.01
 
 py5.run_sketch()

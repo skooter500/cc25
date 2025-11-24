@@ -18,7 +18,7 @@ def setup():
         print(f"{i}: {port}")
     
     if ports:
-        midi_input = mido.open_input(ports[1])
+        midi_input = mido.open_input(ports[4])
         print(f"Listening on: {ports[1]}")
 
     soundfiles.append(SoundFile(py5.get_current_sketch(), "drums/clap-808.wav"))
