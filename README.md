@@ -41,6 +41,9 @@ Course Notes:
 - [OOP with Python & Py5](python_oop.pdf)
 - [Audio Examples](audio_examples/)
 
+## Week 10 - More Spaceship stuff
+
+
 ## Week 9 - OOP, Spaceships & Music
 - [OOP with Python & Py5](python_oop.pdf)
 
